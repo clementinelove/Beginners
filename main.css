@@ -3,16 +3,36 @@
 Change all link color
 **/
 
+body {
+  font-family: "Songti SC",Helvetica, Vernada, Tahoma, STXihei, SimSun, sans-serif;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+}
+
+/* navigator ============================= */
+nav {
+  font-family: STFangSong, Helvetica, Vernada, Tahoma, STXihei, "Songti SC", SimSun, sans-serif;
+  align-self: flex-end;
+  font-size: 30px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+/* ======================================= */
+
 a:link, a:visited{ 
   /* unvisited and visted link */
-  color: #888;
+  color: #d3585c;
   text-decoration: none;
   font-family: STFangSong, Helvetica, Vernada, Tahoma, STXihei, "Songti SC", SimSun, sans-serif;
 }
 
 a:hover {
   /* when mouse hover on link */
-  color: #000;
+  color: #d37a7d;
 }
 
 a:active {color:#003; outline:none;}
@@ -29,5 +49,5 @@ a:active {color:#003; outline:none;}
 }
 
 #article-list li {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }

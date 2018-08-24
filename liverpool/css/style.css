@@ -1,24 +1,26 @@
 
 body {
+  background-color: black;
+  color: white;
   text-align: justify; 
-  color:#000; 
+  /*color:#000; */
   font-family:Songti SC; 
   font-size:12pt; 
   line-height:1.6;
   margin:0; 
   padding:2em 2em 5em; 
-  background:rgb(253, 253, 253);
+  /*background:rgb(253, 253, 253);*/
   margin:auto;
   max-width:33em;
-  color:rgb(10, 10, 10);
+  /*color:rgb(10, 10, 10);*/
   } 
 
 strong { font-weight: 900; }
 
 a {outline:none !important; font-weight:bold; text-decoration:none;}
-a:link, a:visited {color:#888;}
-a:hover {color:#36B;}
-a:active {color:#003; outline:none;}
+a:link, a:visited {color:#6da8e8;}
+a:hover {color:#3590f2;}
+a:active {color:#d37a7d; outline:none;}
 
 h1 {
   font-family: "Songti SC", Helvetica, Vernada, Tahoma, STXihei, SimSun, sans-serif;
@@ -70,7 +72,6 @@ p {
   font-size:100%;
   margin:1em 0 0;
   margin-bottom: 1em;
-
 }
 
 /*
