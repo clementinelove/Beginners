@@ -5,17 +5,21 @@ Change all link color
 
 a:link, a:visited{ 
   /* unvisited and visted link */
-  color: #42af9f;
+  color: #888;
+  text-decoration: none;
   font-family: STFangSong, Helvetica, Vernada, Tahoma, STXihei, "Songti SC", SimSun, sans-serif;
 }
 
 a:hover {
   /* when mouse hover on link */
-  color: #61c6b7;
+  color: #000;
 }
+
+a:active {color:#003; outline:none;}
 
 #site-main-title {
     padding-left: 2rem;
+    font-family: "Songti SC",Helvetica, Vernada, Tahoma, STXihei, SimSun, sans-serif;
 }
 
 #article-list {
