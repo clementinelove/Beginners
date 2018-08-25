@@ -1,7 +1,7 @@
 
 body {
-  background-color: black;
-  color: white;
+  background-color: #111;
+  color: #EEE;
   text-align: justify; 
   /*color:#000; */
   font-family:Songti SC; 
@@ -109,7 +109,7 @@ ul, ol {
 }
 
 ul li, ol li {
-	padding-left: 0.3em;
+  padding-left: 0.3em;
     margin-top: 0.6em;
 }
 
@@ -130,30 +130,30 @@ ol#footnotes { margin-top: 4.5em;border-top: 1px solid #eee; padding-top: 1em; f
 ol#footnotes p {text-indent: 0px;}
 
 figure + p {
-	text-indent: 0em !important;
+  text-indent: 0em !important;
 }
 
 @keyframes highfade {
     0% {
-		background-color: none;
+    background-color: none;
     }
     20% {
-		background-color: yellow;
-	}
+    background-color: yellow;
+  }
     100% {
-		background-color: none;
+    background-color: none;
     }
 }
 
 @-webkit-keyframes highfade {
     0% {
-		background-color: none;
+    background-color: none;
     }
     20% {
-		background-color: yellow;
-	}
+    background-color: yellow;
+  }
     100% {
-		background-color: none;
+    background-color: none;
     }
 }
 

@@ -6,7 +6,7 @@ Change all link color
 body {
   font-family: "Songti SC",Helvetica, Vernada, Tahoma, STXihei, SimSun, sans-serif;
   font-size: 1rem;
-  background-color: black;
+  background-color: #111;
   color: white;
 }
 
@@ -50,4 +50,5 @@ a:active {color:#003; outline:none;}
 
 #article-list li {
   font-size: 2rem;
+  padding-bottom: 1.2rem;
 }
