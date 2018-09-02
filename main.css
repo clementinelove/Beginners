@@ -52,3 +52,13 @@ a:active {color:#003; outline:none;}
   font-size: 2rem;
   padding-bottom: 1.2rem;
 }
+
+/* =============== */
+/* Music Container */
+/* =============== */
+
+.music {
+  height: 300px;
+  width: 300px;
+
+}
