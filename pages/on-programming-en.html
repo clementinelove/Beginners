@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-10-30 Tue 12:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Programming Experiences</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Yuhao Zhang" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Programming Experiences</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org39f43dd">1. Say Goodbye to Error Prone</a></li>
+<li><a href="#orgd45c72c">2. Increase the Code Readability</a>
+<ul>
+<li><a href="#orgc7a6727">2.1. Argument Labels and Keyword</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org39f43dd" class="outline-2">
+<h2 id="org39f43dd"><span class="section-number-2">1</span> Say Goodbye to Error Prone</h2>
+</div>
+
+<div id="outline-container-orgd45c72c" class="outline-2">
+<h2 id="orgd45c72c"><span class="section-number-2">2</span> Increase the Code Readability</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgc7a6727" class="outline-3">
+<h3 id="orgc7a6727"><span class="section-number-3">2.1</span> Argument Labels and Keyword</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+In a language like Swift, we can add argument labels to arguments in our function. The argument label in Swift works similarly to the <a href="https://docs.racket-lang.org/guide/application.html#%28part._keyword-args%29">keyword</a> facility in Racket.
+</p>
+
+<p>
+To see what argument labels and keyword could achieve for us, see the code below:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #0000FF;">#lang</span> <span style="color: #BA36A5;">racket</span>
+(<span style="color: #0000FF;">require</span> 2htdp/image)
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">(star-polygon side-length                             </span>
+<span style="color: #8D8D84;">;;               </span><span style="color: #8D8D84; font-style: italic;">side-count                              </span>
+<span style="color: #8D8D84;">;;               </span><span style="color: #8D8D84; font-style: italic;">step-count</span>
+<span style="color: #8D8D84;">;;               </span><span style="color: #8D8D84; font-style: italic;">outline-mode                            </span>
+<span style="color: #8D8D84;">;;               </span><span style="color: #8D8D84; font-style: italic;">pen-or-color) &#8594; image?</span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">side-length : (and/c real? (not/c negative?))</span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">side-count : side-count?</span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">step-count : step-count?</span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">outline-mode : (or/c 'outline "outline")</span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">pen-or-color : (or/c pen? image-color?)</span>
+(star-polygon <span style="color: #2e8b57;">40</span> <span style="color: #2e8b57;">7</span> <span style="color: #2e8b57;">3</span> <span style="color: #008000;">"outline"</span> <span style="color: #008000;">"darkred"</span>)
+</pre>
+</div>
+
+<p>
+Can you understand what does the call of function do without looking at the function signature of it? I guess you would tend to feel very hard to guess what does these function do. In this case, use argument labels or keywords would increate the readability in a very fancy way:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket">(star-ploygon <span style="color: #cd0000;">#:side-length</span> <span style="color: #2e8b57;">40</span>
+              <span style="color: #cd0000;">#:side-count</span> <span style="color: #2e8b57;">7</span>
+              <span style="color: #cd0000;">#:step-count</span> <span style="color: #2e8b57;">3</span>
+              <span style="color: #008000;">"outline"</span> <span style="color: #008000;">"darked"</span>)
+</pre>
+</div>
+
+<p>
+Notice here we use line break to expose the keyword arguments; this is a technique worth noticing.
+</p>
+
+<p>
+Though constructs like label seems doesn't do any bad, it can cause over-engineering if it was overly used. On the otherside we always have doc comments. Since IDE is so popular in recent days, it could be more important to write a good documentation instead of focus your mind thinking a verb for the use of an argument label. Every programmer who wants to be a 'function caller' needs to take their time reading docs and comments, especially when you encountered a function like <code>star-polygon</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift" id="orgef0371b"><span style="color: #0000FF;">struct</span> <span style="color: #006699;">Posn</span> {
+    <span style="color: #0000FF;">var</span> x: <span style="color: #006FE0;">Int</span>
+    <span style="color: #0000FF;">var</span> y: <span style="color: #006FE0;">Int</span>
+}
+
+<span style="color: #0000FF;">enum</span> <span style="color: #006699;">Direction</span> {
+    <span style="color: #0000FF;">case</span> north, south, east, west
+}
+
+<span style="color: #0000FF;">let</span> position = <span style="color: #006699;">Posn</span>(x: 0, y: 1)
+
+<span style="color: #8D8D84;">/// </span><span style="color: #8D8D84; font-style: italic;">This function moves a position Posn</span>
+<span style="color: #0000FF;">func</span> <span style="color: #006699;">move</span>(to direction: Direction, distance: <span style="color: #006FE0;">Int</span>) {
+    position.<span style="color: #BA36A5;">x</span> = position.<span style="color: #BA36A5;">x</span> + distance
+}
+</pre>
+</div>
+
+<p>
+Keyword相较于Label最大的一个不同点在于其参数是基于Keyword的位置确定的，因此函数调用者的代码可以较为灵活。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket" id="org55d29cc">(<span style="color: #0000FF;">define</span> <span style="color: #BA36A5;">greet</span>
+  (<span style="color: #0000FF;">lambda</span> (given <span style="color: #cd0000;">#:last</span> surname)
+    (<span style="color: #006FE0;">string-append</span> <span style="color: #008000;">"Hello, "</span> given <span style="color: #008000;">" "</span> surname)))
+
+(greet <span style="color: #008000;">"John"</span> <span style="color: #cd0000;">#:last</span> <span style="color: #008000;">"Smith"</span>)
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">"Hello, John Smith"</span>
+(greet <span style="color: #cd0000;">#:last</span> <span style="color: #008000;">"Doe"</span> <span style="color: #008000;">"John"</span>)
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">"Hello, John Doe"</span>
+</pre>
+</div>
+
+<p>
+但允许函数调用者代码随意放置keyword参数的位置是否会牺牲一定可读性？我觉得在不大量混用keyword和普通参数的情况下并不会有这个问题。调用者只需要注意适时断行，这样可以让keyword所在的位置一目了然。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Yuhao Zhang</p>
+<p class="date">Created: 2018-10-30 Tue 12:41</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

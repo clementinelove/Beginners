@@ -1,29 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8" />
-    <title>记事</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
-<!-- 
-	<nav>
-		<ul>
-			
-		</ul>
-	</nav> -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <title>Code - Beginner's Blog</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
 
-  <ul>
-    <li><p>读书不能隔过一天，知识很容易隔天就忘</p></li>
-  </ul>
+    <div id="content">
+      <!--Articles-->
+      <section id="articles">
+        <h1>Articles</h1>
+        <ul>
+          <li><a href="uml/wrong-with-uml.html">现实软件开发中的UML</a></li>
+          <li><a href="how-to-study-year-2/how-to-study-year-2-1.html">如何学习西浦大二年的信息与计算科学（ICS）？（上）</a></li>
+        </ul>
+      </section>
 
-    <ul id="article-list">
-    	<li><a href="liverpool/intro-liv.html">利物浦导论</a></li>
-    	<li><a href="uml/wrong-with-uml.html">UML图的问题在哪里？</a></li>
-        <li><a href="how-to-study-year-2/how-to-study-year-2-1.html">如何学习西浦大二年的信息与计算科学（ICS）？（上）</a></li>
-        
-    </ul>
+      <!--Code Snippets-->
+      <section id="code">
+        <h1>Code</h1>
+        <blockquote class="en">These code were proposed only for learning purposes.</blockquote>
+        <blockquote class="cn">以下代码仅用于学习用途。</blockquote>
+        <section>
+          <h2>Scheme / Racket</h2>
+          <p>Note: you may need <a href="https://download.racket-lang.org/">DrRacket</a> to open these files,
+            <br>
+            since some of them contain DrRacket style comment box.</p>
+          <ul>
 
-</body>
+            <li>
+              <h3>Scheme - the Art of Programming</h3>
+
+              <ul>
+                <li>
+                  <h4>Vector</h4>
+                  <blockquote class="cn">阵列/数组是在各种编程语言中最常见的数据结构之一
+                    以下代码所呈现的Vector以racket自带的vector结构实现。
+                  </blockquote>
+                  <blockquote class="en"></blockquote>
+                  <ul>
+                    <li><a href="code/Scheme/SAOP/vector-rep.rkt">vector-rep.rkt</a></li>
+                    <li><a href="code/Scheme/SAOP/vector.rkt">vector.rkt</a></li>
+                  </ul>
+                </li>
+
+
+                <li>
+                  <h4>Matrix</h4>
+                  <blockquote class="cn">
+                    矩阵是一种数据结构，在许多语言中以"多位数组/阵列"的形象呈现。以下代码中的矩阵是通过vector实现的。
+                  </blockquote>
+                  <blockquote class="en"></blockquote>
+                  <ul>
+                    <li><a href="code/Scheme/SAOP/matrix-rep.rkt">matrix-rep.rkt</a></li>
+                    <li><a href="code/Scheme/SAOP/matrix.rkt">matrix.rkt</a></li>
+                  </ul>
+                </li>
+
+                <!--<li>
+                  <h4>Sorting Algorithms</h4>
+                  <blockquote class="cn">
+                    包含一些基础排序算法的实现：插入排序，归并排序，快速排序等。
+                  </blockquote>
+                  <blockquote class="en"></blockquote>
+                  <ul>
+                    <li><a href="code/Scheme/SAOP/vector-rep.rkt">vector-rep.rkt</a></li>
+                    <li><a href="code/Scheme/SAOP/vector.rkt">vector.rkt</a></li>
+                  </ul>
+                </li>-->
+
+
+              </ul>
+            </li>
+
+
+          </ul>
+
+        </section>
+
+      </section>
+    </div>
+
+
+    <footer>
+      <p class="preface">for beginners</p>
+      <p>©2018 Beginner's Blog</p>
+    </footer>
+  </body>
 </html>

@@ -1,29 +1,38 @@
+/*
+	Georgia
+
+	Demo css to show basic, blog-like styling
+
+	Visit http://www.ulyssesapp.com/styles for full reference
+
+*/
+
+
 
 body {
-  background-color: #111;
-  color: #EEE;
   text-align: justify; 
-  /*color:#000; */
+  color:#000; 
   font-family:Songti SC; 
   font-size:12pt; 
   line-height:1.6;
   margin:0; 
   padding:2em 2em 5em; 
-  /*background:rgb(253, 253, 253);*/
+  background:rgb(253, 253, 253);
   margin:auto;
   max-width:33em;
-  /*color:rgb(10, 10, 10);*/
+  color:rgb(10, 10, 10);
   } 
 
 strong { font-weight: 900; }
 
 a {outline:none !important; font-weight:bold; text-decoration:none;}
-a:link, a:visited {color:#6da8e8;}
-a:hover {color:#3590f2;}
-a:active {color:#d37a7d; outline:none;}
+a:link {color:#c00;}
+a:visited {color:#606;}
+a:hover {color:#606;}
+a:active {color:#900; outline:none;}
 
 h1 {
-  font-family: "Songti SC", Helvetica, Vernada, Tahoma, STXihei, SimSun, sans-serif;
+  font-family:Hiragino Sans GB; 
   text-align: center; 
   font-size:200%;
   line-height:1.2;
@@ -32,14 +41,16 @@ h1 {
 }
 
 h2 {
-  font-family: "Songti SC", Helvetica, Vernada, Tahoma, STXihei, SimSun, sans-serif;
+  font-family:Hiragino Sans GB; 
+  
   font-size:130%;
   line-height: 140%;
   margin:3.0em 0 0.75em;
 }
 
 h3 {
-  font-family: "Songti SC", Helvetica, Vernada, Tahoma, STXihei, SimSun, sans-serif;
+  font-family:Hiragino Sans GB; 
+  
   text-transform:uppercase;
   font-size:100%;
   letter-spacing:0.15em;
@@ -72,6 +83,7 @@ p {
   font-size:100%;
   margin:1em 0 0;
   margin-bottom: 1em;
+
 }
 
 /*
@@ -109,7 +121,7 @@ ul, ol {
 }
 
 ul li, ol li {
-  padding-left: 0.3em;
+	padding-left: 0.3em;
     margin-top: 0.6em;
 }
 
@@ -130,30 +142,30 @@ ol#footnotes { margin-top: 4.5em;border-top: 1px solid #eee; padding-top: 1em; f
 ol#footnotes p {text-indent: 0px;}
 
 figure + p {
-  text-indent: 0em !important;
+	text-indent: 0em !important;
 }
 
 @keyframes highfade {
     0% {
-    background-color: none;
+		background-color: none;
     }
     20% {
-    background-color: yellow;
-  }
+		background-color: yellow;
+	}
     100% {
-    background-color: none;
+		background-color: none;
     }
 }
 
 @-webkit-keyframes highfade {
     0% {
-    background-color: none;
+		background-color: none;
     }
     20% {
-    background-color: yellow;
-  }
+		background-color: yellow;
+	}
     100% {
-    background-color: none;
+		background-color: none;
     }
 }
 

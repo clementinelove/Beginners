@@ -1,0 +1,87 @@
+
+* {
+  padding: 0 10px;
+  margin: 0.5rem auto;
+}
+
+body {
+  padding: 0;
+  /*padding-top: 100px;*/ /* for nav*/
+  margin: 0;
+  font-family: "Songti SC", Helvetica, Vernada, Tahoma, STXihei, SimSun, sans-serif;
+}
+
+a {
+  padding: 0;
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: #0E0EFF;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* ======= */
+/* Content */
+/* ======= */
+
+/*#content {*/
+  /*padding: 1.0rem 2.0rem;*/
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: flex-start;*/
+
+/*}*/
+
+/* ======================================= */
+
+/* ======== */
+/* Articles */
+/* ======== */
+
+/* ==== */
+/* Code */
+/* ==== */
+
+
+
+#code li a {
+  font-family: Monaco, "Courier New", monospace;
+}
+
+/* ====== */
+/* Footer */
+/* ====== */
+
+footer {
+  text-align: center;
+}
+
+footer .preface {
+  font-style: italic;
+  font-family: Serif;
+}
+
+/* ====== */
+/* Quotes */
+/* ====== */
+
+blockquote.cn {
+  font-family: STFangSong, Helvetica, Arial, Vernada, Tahoma, STXihei, "Microsoft YaHei", "Songti SC", SimSun, Heiti, sans-serif;
+}
+
+blockquote.en {
+  font-style: italic;
+}

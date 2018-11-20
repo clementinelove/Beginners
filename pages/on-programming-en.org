@@ -1,0 +1,104 @@
+#+TITLE: Programming Experiences
+#+AUTHOR: Yuhao Zhang
+#+LANGUAGE: en
+
+** Say Goodbye to Error Prone
+*** Constructors
+
+Constructors, if you think deeply, is a key part of a class specification. It creates life for objects. Suppose you are the god of the universe, you can express everything you hope your creatures wants to have using constructors.
+
+But here is a thing: as a class designer, you need to force your users to put the arguments that will be used in later phase. Take JavaScript for example, if you want to send AJAX requests, XMLHttpRequest have to use a callback function stored in ~onreadystatechange~ of the XMLHttprequest object. But the library designer designed the XMLHttpRequest like this:
+
+#+BEGIN_SRC javascript
+  var xhr = new XMLHttpRequest();
+#+END_SRC
+
+Hey, if you have to use the ~onreadystatechange~ property, why won't you include that in your constructor? thus user won't forget what they need to do here.
+
+** Increase the Code Readability
+*** Argument Labels and Keyword
+
+In a language like Swift, we can add [[https://docs.swift.org/swift-book/LanguageGuide/Functions.html#ID166][argument labels]] to arguments in our function. The argument label in Swift works similarly to the [[https://docs.racket-lang.org/guide/application.html#%2528part._keyword-args%2529][keyword]] facility in Racket.
+
+To see what argument labels and keyword could achieve for us, see the code below:
+
+#+BEGIN_SRC racket
+  #lang racket
+  (require 2htdp/image)
+
+  ;; (star-polygon side-length	 	 	 	 
+  ;;               side-count	 	 	 	 
+  ;;               step-count
+  ;;               outline-mode	 	 	 	 
+  ;;               pen-or-color) → image?
+  ;;   side-length : (and/c real? (not/c negative?))
+  ;;   side-count : side-count?
+  ;;   step-count : step-count?
+  ;;   outline-mode : (or/c 'outline "outline")
+  ;;   pen-or-color : (or/c pen? image-color?)
+  (star-polygon 40 7 3 "outline" "darkred")
+#+END_SRC
+
+Can you understand what does the function call do without looking at the function signature of it? Of course it generate a star shape polygon, but can you be more specific? It could be very hard for you and I to guess what does these arguments do. In this case, use argument labels or keywords would increate the readability in a very fancy way
+
+#+BEGIN_SRC racket
+  (star-ploygon #:side-length 40
+		#:side-count 7
+		#:step-count 3
+		"outline" "darked")
+#+END_SRC
+
+Notice here we use line break to expose the keyword arguments; this is a technique worth noticing.
+
+Though constructs like label seems doesn't do any bad, it can cause over-engineering if it was overly used. On the other side, we always have doc comments (e.g. JavaDoc). Since IDE is so popular in recent days, it could be more important to write a good documentation instead of focus your mind thinking a verb for the use of an argument label. Every programmer who wants to be a 'function caller' needs to take their time reading docs and comments, especially when you encountered a function like ~star-polygon~.
+
+#+NAME: Swift Labels Example
+#+BEGIN_SRC swift
+  struct Posn {
+      var x: Int
+      var y: Int
+  }
+
+  enum Direction {
+      case north, south, east, west
+  }
+
+  let position = Posn(x: 0, y: 1)
+
+  /// This function moves a position Posn
+  func move(to direction: Direction, _ distance: Int) {
+      position.x = position.x + distance
+  }
+#+END_SRC
+
+One of the difference between keyword and label is, keyword arguments is keyword based, not position based, so the code of function/procedure calls can be more flexible.
+
+#+NAME: Racket Keyword Example 
+#+BEGIN_SRC racket
+  (define greet
+    (lambda (given #:last surname)
+      (string-append "Hello, " given " " surname)))
+
+  (greet "John" #:last "Smith")
+  ; "Hello, John Smith"
+  (greet #:last "Doe" "John")
+  ; "Hello, John Doe"
+#+END_SRC
+
+However, is it a really good idea allowing programmers randomly place their keyword arguments? I believe not. For arguments that comes with natural ordering sequence, we should still keep the original sequence. For example, 
+
+#+NAME: keyword placement issue
+#+BEGIN_SRC racket
+  ;; rgb takes three 0~255 natural numbers and use it to generate a rgb color.
+  (define rgb
+    (lambda (#:red r #:green: g #:blue b)
+      ...))
+
+  (rgb #:red 20 #:green 30 #:blue 40)
+  (rgb #:blue 40 #:red 20 #:green 30)
+#+END_SRC
+
+For a function that takes three byte numbers as arguments to generate rgb colors, should the function caller calls the function using ~(rgb #blue: 120 #:green: 250 #:red 255)~? It takes a while for a programmer to see what's going on here.
+
+
+

@@ -1,0 +1,107 @@
+% Created 2018-10-30 Tue 02:55
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Yuhao Zhang}
+\date{\today}
+\title{Programming Experiences}
+\hypersetup{
+ pdfauthor={Yuhao Zhang},
+ pdftitle={Programming Experiences},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.1 (Org mode 9.1.9)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Say Goodbye to Error Prone}
+\label{sec:orgfb2b26c}
+
+\section{Increase the Code Readability}
+\label{sec:orgc1bb8de}
+\subsection{Argument Labels and Keyword}
+\label{sec:org62a6366}
+
+In a language like Swift, we can add argument labels to arguments in our function. The argument label in Swift works similarly to the \href{https://docs.racket-lang.org/guide/application.html\#\%2528part.\_keyword-args\%2529}{keyword} facility in Racket.
+
+To see what argument labels and keyword could achieve for us, see the code below:
+
+\begin{verbatim}
+#lang racket
+(require 2htdp/image)
+
+;; (star-polygon side-length	 	 	 	 
+;;               side-count	 	 	 	 
+;;               step-count
+;;               outline-mode	 	 	 	 
+;;               pen-or-color) → image?
+;;   side-length : (and/c real? (not/c negative?))
+;;   side-count : side-count?
+;;   step-count : step-count?
+;;   outline-mode : (or/c 'outline "outline")
+;;   pen-or-color : (or/c pen? image-color?)
+(star-polygon 40 7 3 "outline" "darkred")
+\end{verbatim}
+
+Can you understand what does the call of function do without looking at the function signature of it? I guess you would tend to feel very hard to guess what does these function do. In this case, use argument labels or keywords would increate the readability in a very fancy way:
+
+\begin{verbatim}
+(star-ploygon #:side-length 40
+	      #:side-count 7
+	      #:step-count 3
+	      "outline" "darked")
+\end{verbatim}
+
+Notice here we use line break to expose the keyword arguments; this is a technique worth noticing.
+
+Though constructs like label seems doesn't do any bad, it can cause over-engineering if it was overly used. On the otherside we always have doc comments. Since IDE is so popular in recent days, it could be more important to write a good documentation instead of focus your mind thinking a verb for the use of an argument label. Every programmer who wants to be a 'function caller' needs to take their time reading docs and comments, especially when you encountered a function like \texttt{star-polygon}.
+
+\begin{verbatim}
+struct Posn {
+    var x: Int
+    var y: Int
+}
+
+enum Direction {
+    case north, south, east, west
+}
+
+let position = Posn(x: 0, y: 1)
+
+/// This function moves a position Posn
+func move(to direction: Direction, distance: Int) {
+    position.x = position.x + distance
+}
+\end{verbatim}
+
+Keyword相较于Label最大的一个不同点在于其参数是基于Keyword的位置确定的，因此函数调用者的代码可以较为灵活。
+
+\begin{verbatim}
+(define greet
+  (lambda (given #:last surname)
+    (string-append "Hello, " given " " surname)))
+
+(greet "John" #:last "Smith")
+; "Hello, John Smith"
+(greet #:last "Doe" "John")
+; "Hello, John Doe"
+\end{verbatim}
+
+但允许函数调用者代码随意放置keyword参数的位置是否会牺牲一定可读性？我觉得在不大量混用keyword和普通参数的情况下并不会有这个问题。调用者只需要注意适时断行，这样可以让keyword所在的位置一目了然。
+\end{document}
