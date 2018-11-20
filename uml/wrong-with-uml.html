@@ -34,7 +34,9 @@
 
 <h2>逆向工程</h2>
 
-<p>现在来看看UML是否能够自动生成软件模型。一旦UML图能够用于生成代码，那就意味着图形本身可以被映射（map）到某一个程序语言里，从而<strong>让程序员可以直接用图来进行编程</strong>，然后再生成可以运行的代码。这种做法通常叫逆向制造（Reverse Engineering）。</p>
+<p>现在来看看UML是否能够自动生成软件模型。一旦UML图能够用于生成代码，那就意味着图形本身可以被映射（map）到某一个程序语言里，从而<strong>让程序员可以直接用图来进行编程</strong>，然后再生成可以运行的代码。这种做法通常叫逆向制造（Reverse Engineering），是以<strong><a href="https://en.wikipedia.org/w/index.php?title=Model-driven_architecture" title="Model-Driven Architecture - Wikipedia">模型驱动架构</a></strong>为方法论的软件设计方式常需用到的功能。逆向制造在业界中是很经常用到的！譬如<a href="https://mysqlworkbench.org/2018/10/mysql-workbench-8-0-13-has-been-released/" title="MySQL Workbench">MySQL Workbench</a>就可以将用于描述数据库Schema的ER图逆向制造成SQL代码。</p>
+
+<figure><img src="DraggedImage-1.png" alt="MySQL Workbench中的逆向制造（Reverse Engineer）选项" title="MySQL Workbench中的逆向制造（Reverse Engineer）选项"/><figcaption>MySQL Workbench中的逆向制造（Reverse Engineer）选项</figcaption></figure>
 
 <p>我曾经发邮件问过这位讲师：当我分析完信息得到这个UML模型后，是不是有什么通用的模式可以让UML逆向制造？然而这个问题没能从他那得到一个回复。但后来我得知，虽然并不是所有的UML图都可以进行这种转换，但将类图转换成代码这个功能却早就实现了（比如<a href="https://www.visual-paradigm.com/features/code-engineering-tools/" title="Visual Paradigm关于该功能的介绍">Visual Paradigm</a>就提供了这个功能）。类图受支持的原因很简单，因为它和那些以面向对象系统为主的程序语言之间的关系几乎是自然到显而易见的。对于其他种类的图来说，就没那么幸运了。不过，至少当下最流行的家伙们已经得到了很好的支持。</p>
 
@@ -56,7 +58,7 @@
 
 <p>比如，当你描述“从冰箱里拿出大象”这一过程（程序）的时候，你可以轻松把整个过程分为打开冰箱，拿出食物，关上冰箱这三步。在C语言里，程序员要写的也无非就是就是表示这三步的三个函数：<code>open_fridge_door</code>, <code>take_elephant_out</code>及<code>close_fridge_door</code>。可这三个步骤倘若用“面向对象语言”来表述，就得把这三个步骤变成某个叫“冰箱”的对象的三个静态方法（static method），可想而知这种硬塞模型的做法是多么蹩脚（就好像生搬硬套设计模式（design pattern）让面向对象成为一滩烂泥一样）！这种问题是以面向对象系统为主的语言天生的，类图继承了这一问题，因此即使转换成类图也会如此的奇怪。</p>
 
-<figure><img src="DraggedImage-1.png" alt="Elephant in the Fridge by Christawashere" title="Elephant in the Fridge"/><figcaption>Elephant in the Fridge by Christawashere</figcaption></figure>
+<figure><img src="DraggedImage-2.png" alt="Elephant in the Fridge by Christawashere" title="Elephant in the Fridge"/><figcaption>Elephant in the Fridge by Christawashere</figcaption></figure>
 
 <p>若用类图所用的“面向对象”的概念解释，这三个方法是“冰箱”对象的三个“行为（behavior）”。可现实中冰箱自己又怎么会“打开冰箱”，“拿出食物”，“关上冰箱”呢？面向对象编程所宣称的这三个“方法”是冰箱自身的”行为”的这种说法根本没法成立！</p>
 
