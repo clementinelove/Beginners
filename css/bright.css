@@ -12,7 +12,7 @@
 body {
   text-align: justify; 
   color:#000; 
-  font-family:Songti SC; 
+  font-family: "Songti SC"; 
   font-size:12pt; 
   line-height:1.6;
   margin:0; 
@@ -167,6 +167,11 @@ figure + p {
     100% {
 		background-color: none;
     }
+}
+
+@font-face {
+  font-family: "Songti SC"
+  src: url(../fonts/Songti.ttc);
 }
 
 a:target, ol#footnotes li:target, sup a:target  {
